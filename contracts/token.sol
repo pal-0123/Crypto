@@ -49,7 +49,7 @@ contract token{
     function transfer(uint256 to, uint256 value) public returns (bool){
         require(balanceOf[msg.sender] > value);
         
-        require(creator[creatorId[to]] > 0);
+        require(creatorId[to] > 0);
         
         balanceOf[msg.sender] -= value;
         balanceOf[creator[creatorId[to]]] += value;
